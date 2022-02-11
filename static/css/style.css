@@ -1,0 +1,46 @@
+/* Simple Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.head {
+    margin: 2% auto 3%;
+}
+
+.title {
+    display: inline-block;
+    background-color: bisque;
+    color: peru;
+    width: 450px;
+    padding: 1% 1%;
+    text-align: center;
+}
+
+.board_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.board_col {
+    width: 80px;
+    height: 80px;
+    background-color: bisque;
+}
+
+.odd_color {
+    background-color: peru;
+}

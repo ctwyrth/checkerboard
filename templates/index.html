@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkerboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1 class="title">*** CHECKERBOARD ***</h1>
+        </div>
+        <div class="board">
+            {% for x in range(rows): %}
+                <div class="board_row">
+                    {% for y in range(cols): %}
+                        <div class="board_col 
+                            {% if x%2 == 0 and y%2 != 0: %}
+                                odd_color
+                            {% elif x%2 != 0 and y%2 == 0: %}
+                                odd_color
+                            {% endif %}
+                            "></div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <style>
+        {% if color1: %}
+            .board_col {
+                background-color: {{ color1 }};
+            }
+
+            .title {
+                color: {{ color1 }};
+            }
+        {% endif %}
+        {% if color2: %}
+            .odd_color {
+                background-color: {{ color2 }};
+            }
+
+            .title {
+                background-color: {{ color2 }};
+            }
+        {% endif %}
+    </style>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
